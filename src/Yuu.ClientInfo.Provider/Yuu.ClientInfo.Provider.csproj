@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Volo.Abp.AspNetCore.Abstractions" />
     <PackageReference Include="Volo.Abp.Core" />
+    <PackageReference Include="Yuu.ClientInfo.Provider.Abstractions" />
   </ItemGroup>
 
 </Project>

@@ -16,5 +16,7 @@
     <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageVersion Include="Volo.Abp.AspNetCore.Abstractions" Version="10.0.2" />
     <PackageVersion Include="Volo.Abp.Core" Version="10.0.2" />
+    <PackageVersion Include="Yuu.ClientInfo.Provider.Abstractions" Version="10.0.0" />
+    <PackageVersion Include="Yuu.Environment.Provider.Abstractions" Version="10.0.0" />
   </ItemGroup>
 </Project>
