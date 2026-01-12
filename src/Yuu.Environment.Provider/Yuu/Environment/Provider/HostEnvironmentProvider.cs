@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Hosting;
 using Volo.Abp.DependencyInjection;
+using Yuu.Environment.Provider.Extensions;
 
 namespace Yuu.Environment.Provider;
 

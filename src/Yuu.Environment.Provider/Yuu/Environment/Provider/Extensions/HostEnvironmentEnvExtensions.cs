@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Hosting;
 
-namespace Yuu.AspNetCore.Hosting.Extensions;
+namespace Yuu.Environment.Provider.Extensions;
 
 /// <summary>
 /// Extension methods for <see cref="IHostEnvironment"/>.
