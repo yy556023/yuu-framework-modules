@@ -1,0 +1,818 @@
+# =============================================================================
+# EditorConfig is awesome: https://EditorConfig.org
+# EditorConfig 是一個跨編輯器和 IDE 的程式碼風格統一工具
+# =============================================================================
+
+# top-most EditorConfig file
+# 最上層的 EditorConfig 檔案（停止向上搜尋）
+root = true
+
+# =============================================================================
+# All files
+# 所有檔案的通用設定
+# =============================================================================
+[*]
+charset = utf-8
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+guidelines = 140
+max_line_length = 140
+end_of_line = lf
+
+# =============================================================================
+# .NET / C# / VB files
+# .NET / C# / VB 程式碼檔案
+# =============================================================================
+[*.{cs,csx,vb,vbx}]
+indent_size = 4
+
+# =============================================================================
+# MSBuild / XML project files
+# MSBuild / XML 專案檔案
+# =============================================================================
+[*.{csproj,vbproj,vcxproj,vcxproj.filters,proj,projitems,shproj}]
+indent_size = 2
+
+# =============================================================================
+# XML configuration files
+# XML 設定檔
+# =============================================================================
+[*.{props,targets,ruleset,config,nuspec,resx,vsixmanifest,vsct,xml,stylecop}]
+indent_size = 2
+
+# =============================================================================
+# JSON files
+# JSON 檔案
+# =============================================================================
+[*.json]
+indent_size = 2
+end_of_line = lf
+
+# =============================================================================
+# TypeScript / JavaScript files (Angular)
+# TypeScript / JavaScript 檔案 (Angular 專用)
+# =============================================================================
+[*.{ts,js,tsx,jsx}]
+indent_size = 2
+end_of_line = lf
+quote_type = single
+
+# =============================================================================
+# HTML / Template files (Angular)
+# HTML / 樣板檔案 (Angular 專用)
+# =============================================================================
+[*.{html,htm}]
+indent_size = 2
+end_of_line = lf
+
+# =============================================================================
+# CSS / SCSS / SASS / LESS files (Angular)
+# CSS / SCSS / SASS / LESS 樣式檔案 (Angular 專用)
+# =============================================================================
+[*.{css,scss,sass,less}]
+indent_size = 2
+end_of_line = lf
+
+# =============================================================================
+# Angular specific files
+# Angular 特定檔案
+# =============================================================================
+[angular.json]
+indent_size = 2
+
+[tsconfig*.json]
+indent_size = 2
+
+# =============================================================================
+# YAML files (Docker Compose, Kubernetes, CI/CD)
+# YAML 檔案 (Docker Compose、Kubernetes、CI/CD)
+# =============================================================================
+[*.{yml,yaml}]
+indent_size = 2
+end_of_line = lf
+
+# =============================================================================
+# Docker files
+# Docker 相關檔案
+# =============================================================================
+[Dockerfile*]
+indent_size = 2
+end_of_line = lf
+
+[docker-compose*.yml]
+indent_size = 2
+end_of_line = lf
+
+[.dockerignore]
+end_of_line = lf
+
+# =============================================================================
+# Shell script files (Linux/macOS/Docker)
+# Shell 腳本檔案 (Linux/macOS/Docker)
+# =============================================================================
+[*.sh]
+indent_size = 2
+end_of_line = lf
+
+[*.{bash,zsh}]
+indent_size = 2
+end_of_line = lf
+
+# =============================================================================
+# Windows script files
+# Windows 腳本檔案
+# =============================================================================
+[*.{cmd,bat}]
+indent_size = 2
+end_of_line = crlf
+
+# =============================================================================
+# PowerShell files (Azure DevOps, deployment scripts)
+# PowerShell 檔案 (Azure DevOps、部署腳本)
+# =============================================================================
+[*.{ps1,psm1,psd1}]
+indent_size = 2
+end_of_line = crlf
+
+# =============================================================================
+# SQL files (MySQL, PostgreSQL, SQL Server)
+# SQL 檔案 (MySQL、PostgreSQL、SQL Server)
+# =============================================================================
+[*.sql]
+indent_size = 2
+end_of_line = lf
+
+# =============================================================================
+# Markdown documentation files
+# Markdown 文件檔案
+# =============================================================================
+[*.md]
+indent_size = 2
+trim_trailing_whitespace = false
+max_line_length = off
+
+# =============================================================================
+# Git configuration files
+# Git 設定檔案
+# =============================================================================
+[.gitattributes]
+end_of_line = lf
+
+[.gitignore]
+end_of_line = lf
+
+# =============================================================================
+# CI/CD configuration files
+# CI/CD 設定檔案
+# =============================================================================
+
+# Azure DevOps Pipelines
+# Azure DevOps 管線
+[azure-pipelines*.yml]
+indent_size = 2
+end_of_line = lf
+
+# GitLab CI
+# GitLab CI 設定
+[.gitlab-ci.yml]
+indent_size = 2
+end_of_line = lf
+
+# GitHub Actions
+# GitHub Actions 工作流程
+[.github/workflows/*.yml]
+indent_size = 2
+end_of_line = lf
+
+# =============================================================================
+# Package manager configuration files
+# 套件管理器設定檔案
+# =============================================================================
+
+# npm / Node.js
+[package.json]
+indent_size = 2
+
+[package-lock.json]
+indent_size = 2
+
+# NuGet
+[*.nuspec]
+indent_size = 2
+
+# =============================================================================
+# Configuration files
+# 各類設定檔案
+# =============================================================================
+[*.config]
+indent_size = 2
+
+[appsettings*.json]
+indent_size = 2
+
+[*.props]
+indent_size = 2
+
+[*.targets]
+indent_size = 2
+
+# =============================================================================
+# Ignore generated files
+# 忽略自動產生的檔案
+# =============================================================================
+[*.{designer.cs,generated.cs,g.cs,g.i.cs}]
+generated_code = true
+
+# =============================================================================
+# .NET code style settings
+# .NET 程式碼風格設定
+# =============================================================================
+[*.{cs,vb}]
+
+# Organize usings
+# using 排序規則
+dotnet_sort_system_directives_first = true
+dotnet_separate_import_directive_groups = false
+
+# this. preferences
+# this. 使用偏好
+dotnet_style_qualification_for_field = false:suggestion
+dotnet_style_qualification_for_property = false:suggestion
+dotnet_style_qualification_for_method = false:suggestion
+dotnet_style_qualification_for_event = false:suggestion
+
+# Language keywords vs BCL types preferences
+# 語言關鍵字 vs BCL 型別偏好
+dotnet_style_predefined_type_for_locals_parameters_members = true:warning
+dotnet_style_predefined_type_for_member_access = true:warning
+
+# Parentheses preferences
+# 括號使用偏好
+dotnet_style_parentheses_in_arithmetic_binary_operators = always_for_clarity:suggestion
+dotnet_style_parentheses_in_relational_binary_operators = always_for_clarity:suggestion
+dotnet_style_parentheses_in_other_binary_operators = always_for_clarity:suggestion
+dotnet_style_parentheses_in_other_operators = never_if_unnecessary:suggestion
+
+# Modifier preferences
+# 修飾詞偏好
+dotnet_style_require_accessibility_modifiers = for_non_interface_members:warning
+dotnet_style_readonly_field = true:warning
+
+# Expression-level preferences
+# 運算式層級偏好
+dotnet_style_object_initializer = true:suggestion
+dotnet_style_collection_initializer = true:suggestion
+dotnet_style_explicit_tuple_names = true:warning
+dotnet_style_prefer_inferred_tuple_names = true:suggestion
+dotnet_style_prefer_inferred_anonymous_type_member_names = true:suggestion
+dotnet_style_prefer_auto_properties = true:suggestion
+dotnet_style_prefer_conditional_expression_over_assignment = true:suggestion
+dotnet_style_prefer_conditional_expression_over_return = true:suggestion
+dotnet_style_prefer_compound_assignment = true:suggestion
+dotnet_style_prefer_simplified_interpolation = true:suggestion
+dotnet_style_prefer_simplified_boolean_expressions = true:suggestion
+
+# Null-checking preferences
+# Null 檢查偏好
+dotnet_style_coalesce_expression = true:warning
+dotnet_style_null_propagation = true:warning
+dotnet_style_prefer_is_null_check_over_reference_equality_method = true:warning
+
+# Parameter preferences
+# 參數偏好
+dotnet_code_quality_unused_parameters = all:suggestion
+
+# Suppression preferences
+# 抑制偏好
+dotnet_remove_unnecessary_suppression_exclusions = none
+
+# New line preferences
+# 換行偏好
+dotnet_style_allow_multiple_blank_lines_experimental = false:warning
+dotnet_style_allow_statement_immediately_after_block_experimental = false:warning
+
+# =============================================================================
+# C# code style settings
+# C# 程式碼風格設定
+# =============================================================================
+[*.cs]
+
+# var preferences
+# var 使用偏好
+csharp_style_var_for_built_in_types = true:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+csharp_style_var_elsewhere = true:suggestion
+
+# Expression-bodied members
+# 運算式主體成員
+csharp_style_expression_bodied_methods = when_on_single_line:suggestion
+csharp_style_expression_bodied_constructors = false:suggestion
+csharp_style_expression_bodied_operators = when_on_single_line:suggestion
+csharp_style_expression_bodied_properties = true:suggestion
+csharp_style_expression_bodied_indexers = true:suggestion
+csharp_style_expression_bodied_accessors = true:suggestion
+csharp_style_expression_bodied_lambdas = true:suggestion
+csharp_style_expression_bodied_local_functions = when_on_single_line:suggestion
+
+# Pattern matching preferences
+# 模式比對偏好
+csharp_style_pattern_matching_over_is_with_cast_check = true:warning
+csharp_style_pattern_matching_over_as_with_null_check = true:warning
+csharp_style_prefer_switch_expression = true:suggestion
+csharp_style_prefer_pattern_matching = true:suggestion
+csharp_style_prefer_not_pattern = true:suggestion
+csharp_style_prefer_extended_property_pattern = true:suggestion
+
+# Null-checking preferences
+# Null 檢查偏好
+csharp_style_throw_expression = true:suggestion
+csharp_style_conditional_delegate_call = true:warning
+
+# Modifier preferences
+# 修飾詞偏好
+csharp_preferred_modifier_order = public,private,protected,internal,static,extern,new,virtual,abstract,sealed,override,readonly,unsafe,volatile,async:suggestion
+csharp_prefer_static_local_function = true:suggestion
+
+# Expression-level preferences
+# 運算式層級偏好
+csharp_prefer_braces = true:warning
+csharp_style_deconstructed_variable_declaration = true:suggestion
+csharp_prefer_simple_default_expression = true:suggestion
+csharp_style_prefer_local_over_anonymous_function = true:suggestion
+csharp_style_prefer_index_operator = true:suggestion
+csharp_style_prefer_range_operator = true:suggestion
+csharp_style_implicit_object_creation_when_type_is_apparent = true:suggestion
+csharp_style_prefer_tuple_swap = true:suggestion
+csharp_style_prefer_utf8_string_literals = true:suggestion
+csharp_style_inlined_variable_declaration = true:suggestion
+csharp_style_prefer_null_check_over_type_check = true:suggestion
+csharp_style_prefer_method_group_conversion = true:suggestion
+csharp_style_prefer_top_level_statements = true:suggestion
+
+# 'using' directive preferences
+# using 指示詞偏好
+csharp_using_directive_placement = outside_namespace:warning
+
+# Code-block preferences
+# 程式碼區塊偏好
+csharp_prefer_simple_using_statement = true:suggestion
+csharp_style_prefer_primary_constructors = true:suggestion
+
+# Namespace preferences
+# 命名空間偏好
+csharp_style_namespace_declarations = file_scoped:warning
+
+# New line preferences
+# 換行偏好
+csharp_style_allow_embedded_statements_on_same_line_experimental = false:warning
+csharp_style_allow_blank_lines_between_consecutive_braces_experimental = false:warning
+csharp_style_allow_blank_line_after_colon_in_constructor_initializer_experimental = false:warning
+csharp_style_allow_blank_line_after_token_in_conditional_expression_experimental = false:warning
+csharp_style_allow_blank_line_after_token_in_arrow_expression_clause_experimental = false:warning
+
+# =============================================================================
+# C# formatting rules
+# C# 格式化規則
+# =============================================================================
+[*.cs]
+
+# New line preferences
+# 換行偏好
+csharp_new_line_before_open_brace = all
+csharp_new_line_before_else = true
+csharp_new_line_before_catch = true
+csharp_new_line_before_finally = true
+csharp_new_line_before_members_in_object_initializers = true
+csharp_new_line_before_members_in_anonymous_types = true
+csharp_new_line_between_query_expression_clauses = true
+
+# Indentation preferences
+# 縮排偏好
+csharp_indent_case_contents = true
+csharp_indent_switch_labels = true
+csharp_indent_labels = no_change
+csharp_indent_block_contents = true
+csharp_indent_braces = false
+csharp_indent_case_contents_when_block = false
+
+# Space preferences
+# 空格偏好
+csharp_space_after_cast = false
+csharp_space_after_keywords_in_control_flow_statements = true
+csharp_space_between_method_call_parameter_list_parentheses = false
+csharp_space_between_method_declaration_parameter_list_parentheses = false
+csharp_space_between_parentheses = false
+csharp_space_before_colon_in_inheritance_clause = true
+csharp_space_after_colon_in_inheritance_clause = true
+csharp_space_around_binary_operators = before_and_after
+csharp_space_between_method_declaration_empty_parameter_list_parentheses = false
+csharp_space_between_method_call_name_and_opening_parenthesis = false
+csharp_space_between_method_call_empty_parameter_list_parentheses = false
+csharp_space_after_comma = true
+csharp_space_after_dot = false
+csharp_space_after_semicolon_in_for_statement = true
+csharp_space_before_semicolon_in_for_statement = false
+csharp_space_around_declaration_statements = false
+csharp_space_before_open_square_brackets = false
+csharp_space_between_empty_square_brackets = false
+csharp_space_between_square_brackets = false
+
+# Wrapping preferences
+# 換行保留偏好
+csharp_preserve_single_line_statements = false
+csharp_preserve_single_line_blocks = true
+
+# =============================================================================
+# Naming conventions
+# 命名慣例
+# =============================================================================
+[*.cs]
+
+# Naming rules
+# 命名規則
+
+# Interface should begin with 'I'
+# 介面應以 'I' 開頭
+dotnet_naming_rule.interface_should_be_begins_with_i.severity = warning
+dotnet_naming_rule.interface_should_be_begins_with_i.symbols = interface
+dotnet_naming_rule.interface_should_be_begins_with_i.style = begins_with_i
+
+# Types should be PascalCase
+# 型別應使用 PascalCase
+dotnet_naming_rule.types_should_be_pascal_case.severity = warning
+dotnet_naming_rule.types_should_be_pascal_case.symbols = types
+dotnet_naming_rule.types_should_be_pascal_case.style = pascal_case
+
+# Non-field members should be PascalCase
+# 非欄位成員應使用 PascalCase
+dotnet_naming_rule.non_field_members_should_be_pascal_case.severity = warning
+dotnet_naming_rule.non_field_members_should_be_pascal_case.symbols = non_field_members
+dotnet_naming_rule.non_field_members_should_be_pascal_case.style = pascal_case
+
+# Private fields should begin with underscore
+# 私有欄位應以底線開頭
+dotnet_naming_rule.private_field_should_be_begins_with_underscore.severity = warning
+dotnet_naming_rule.private_field_should_be_begins_with_underscore.symbols = private_field
+dotnet_naming_rule.private_field_should_be_begins_with_underscore.style = begins_with_underscore
+
+# Constants should be PascalCase
+# 常數應使用 PascalCase
+dotnet_naming_rule.constant_should_be_pascal_case.severity = warning
+dotnet_naming_rule.constant_should_be_pascal_case.symbols = constant
+dotnet_naming_rule.constant_should_be_pascal_case.style = pascal_case
+
+# Static readonly fields should be PascalCase
+# 靜態唯讀欄位應使用 PascalCase
+dotnet_naming_rule.static_readonly_should_be_pascal_case.severity = warning
+dotnet_naming_rule.static_readonly_should_be_pascal_case.symbols = static_readonly
+dotnet_naming_rule.static_readonly_should_be_pascal_case.style = pascal_case
+
+# Public fields should be PascalCase
+# 公開欄位應使用 PascalCase
+dotnet_naming_rule.public_field_should_be_pascal_case.severity = warning
+dotnet_naming_rule.public_field_should_be_pascal_case.symbols = public_field
+dotnet_naming_rule.public_field_should_be_pascal_case.style = pascal_case
+
+# Async methods should end with 'Async'
+# 非同步方法應以 'Async' 結尾
+dotnet_naming_rule.async_method_should_end_with_async.severity = warning
+dotnet_naming_rule.async_method_should_end_with_async.symbols = async_method
+dotnet_naming_rule.async_method_should_end_with_async.style = ends_with_async
+
+# Symbol specifications
+# 符號規格
+
+dotnet_naming_symbols.interface.applicable_kinds = interface
+dotnet_naming_symbols.interface.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
+dotnet_naming_symbols.interface.required_modifiers =
+
+dotnet_naming_symbols.types.applicable_kinds = class, struct, interface, enum
+dotnet_naming_symbols.types.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
+dotnet_naming_symbols.types.required_modifiers =
+
+dotnet_naming_symbols.non_field_members.applicable_kinds = property, event, method
+dotnet_naming_symbols.non_field_members.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
+dotnet_naming_symbols.non_field_members.required_modifiers =
+
+dotnet_naming_symbols.private_field.applicable_kinds = field
+dotnet_naming_symbols.private_field.applicable_accessibilities = private, protected, private_protected
+dotnet_naming_symbols.private_field.required_modifiers =
+
+dotnet_naming_symbols.constant.applicable_kinds = field, local
+dotnet_naming_symbols.constant.applicable_accessibilities = *
+dotnet_naming_symbols.constant.required_modifiers = const
+
+dotnet_naming_symbols.static_readonly.applicable_kinds = field
+dotnet_naming_symbols.static_readonly.applicable_accessibilities = public, internal, protected, protected_internal, private_protected
+dotnet_naming_symbols.static_readonly.required_modifiers = static, readonly
+
+dotnet_naming_symbols.public_field.applicable_kinds = field
+dotnet_naming_symbols.public_field.applicable_accessibilities = public, internal
+dotnet_naming_symbols.public_field.required_modifiers =
+
+dotnet_naming_symbols.async_method.applicable_kinds = method
+dotnet_naming_symbols.async_method.applicable_accessibilities = *
+dotnet_naming_symbols.async_method.required_modifiers = async
+
+# Naming styles
+# 命名風格
+
+# PascalCase
+dotnet_naming_style.pascal_case.required_prefix =
+dotnet_naming_style.pascal_case.required_suffix =
+dotnet_naming_style.pascal_case.word_separator =
+dotnet_naming_style.pascal_case.capitalization = pascal_case
+
+# Begins with 'I'
+# 以 'I' 開頭
+dotnet_naming_style.begins_with_i.required_prefix = I
+dotnet_naming_style.begins_with_i.required_suffix =
+dotnet_naming_style.begins_with_i.word_separator =
+dotnet_naming_style.begins_with_i.capitalization = pascal_case
+
+# Begins with underscore
+# 以底線開頭
+dotnet_naming_style.begins_with_underscore.required_prefix = _
+dotnet_naming_style.begins_with_underscore.required_suffix =
+dotnet_naming_style.begins_with_underscore.word_separator =
+dotnet_naming_style.begins_with_underscore.capitalization = camel_case
+
+# Ends with 'Async'
+# 以 'Async' 結尾
+dotnet_naming_style.ends_with_async.required_prefix =
+dotnet_naming_style.ends_with_async.required_suffix = Async
+dotnet_naming_style.ends_with_async.word_separator =
+dotnet_naming_style.ends_with_async.capitalization = pascal_case
+
+# =============================================================================
+# Code Analysis / Quality Rules
+# 程式碼分析 / 品質規則
+# =============================================================================
+[*.cs]
+
+# CA1001: Types that own disposable fields should be disposable
+# CA1001: 擁有可處置欄位的類型應該是可處置的
+dotnet_diagnostic.CA1001.severity = suggestion
+
+# CA1816: Dispose methods should call SuppressFinalize
+# CA1816: Dispose 方法應呼叫 SuppressFinalize
+dotnet_diagnostic.CA1816.severity = suggestion
+
+# CA1822: Mark members as static
+# CA1822: 將成員標記為 static
+dotnet_diagnostic.CA1822.severity = none
+
+# CA2000: Dispose objects before losing scope
+# CA2000: 在遺失範圍之前處置物件
+dotnet_diagnostic.CA2000.severity = suggestion
+
+# CA2201: Do not raise reserved exception types
+# CA2201: 不要引發保留的例外狀況類型
+dotnet_diagnostic.CA2201.severity = none
+
+# CA2007: Consider calling ConfigureAwait on the awaited task
+# CA2007: 考慮在等待的工作上呼叫 ConfigureAwait
+dotnet_diagnostic.CA2007.severity = none
+
+# CS1591: Use expression body for methods
+# CS1591: 使用表達式主體來撰寫方法
+dotnet_diagnostic.CS1591.severity = none
+
+# IDE0001: Simplify name
+# IDE0001: 簡化名稱
+dotnet_diagnostic.IDE0001.severity = none
+
+# IDE0005: Remove unnecessary using directives
+# IDE0005: 移除不必要的 using 指示詞
+dotnet_diagnostic.IDE0005.severity = none
+
+# IDE0290: Use primary constructor
+# IDE0290: 使用主要建構函式
+dotnet_diagnostic.IDE0290.severity = none
+
+# IDE0028: Use collection initializers or expressions
+# IDE0028: 使用集合初始化或表示式
+dotnet_diagnostic.IDE0028.severity = none
+
+# IDE0090: USimplify new expression
+# IDE0090: 簡化 new 表示式
+dotnet_diagnostic.IDE0090.severity = none
+
+# IDE0011: Add braces
+# IDE0011: 新增大括號
+dotnet_diagnostic.IDE0011.severity = warning
+
+# IDE0022: Use expression body for methods
+# IDE0022: 使用表達式主體來撰寫方法
+dotnet_diagnostic.IDE0022.severity = none
+
+# IDE1006: Use expression body for methods
+# IDE1006: 使用表達式主體來撰寫方法
+dotnet_diagnostic.IDE1006.severity = none
+
+# =============================================================================
+# ASP.NET Core specific rules
+# ASP.NET Core 特定規則
+# =============================================================================
+[*.cs]
+
+# Async/Await best practices
+# 非同步/等待最佳做法
+dotnet_diagnostic.ASYNC0001.severity = warning
+dotnet_diagnostic.ASYNC0004.severity = warning
+
+# Entity Framework Core
+# Entity Framework Core 規則
+dotnet_diagnostic.EF1001.severity = warning
+
+# =============================================================================
+# TypeScript / JavaScript code style (Angular)
+# TypeScript / JavaScript 程式碼風格 (Angular)
+# =============================================================================
+[*.{ts,js}]
+
+# Quotes
+# 引號使用
+quote_type = single
+
+# Semicolons
+# 分號使用
+insert_final_newline = true
+
+# =============================================================================
+# End of file
+# 檔案結尾
+# =============================================================================
+
+# =============================================================================
+# ASP.NET Core MVC / Razor Pages
+# ASP.NET Core MVC / Razor Pages 相關檔案
+# =============================================================================
+
+# Razor views (.cshtml)
+# Razor 視圖檔案 (.cshtml)
+[*.cshtml]
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+
+# Razor component files (Blazor)
+# Razor 元件檔案 (Blazor)
+[*.razor]
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+
+# ASP.NET Core tag helpers
+# ASP.NET Core Tag Helper 設定
+[*TagHelper.cs]
+indent_size = 4
+
+# View components
+# View Component 檔案
+[*ViewComponent.cs]
+indent_size = 4
+
+# ASP.NET Core middleware
+# ASP.NET Core 中介軟體
+[*Middleware.cs]
+indent_size = 4
+
+# ASP.NET Core filters
+# ASP.NET Core 篩選器
+[*Filter.cs]
+indent_size = 4
+
+# Model validation attributes
+# 模型驗證屬性
+[*ValidationAttribute.cs]
+indent_size = 4
+
+# =============================================================================
+# Client-side libraries (wwwroot)
+# 客戶端函式庫 (wwwroot)
+# =============================================================================
+
+# JavaScript files in wwwroot
+# wwwroot 中的 JavaScript 檔案
+[wwwroot/**/*.js]
+indent_size = 2
+end_of_line = lf
+
+# CSS files in wwwroot
+# wwwroot 中的 CSS 檔案
+[wwwroot/**/*.css]
+indent_size = 2
+end_of_line = lf
+
+# Minified files (read-only, don't format)
+# 壓縮檔案 (唯讀，不格式化)
+[*.min.{js,css}]
+insert_final_newline = false
+trim_trailing_whitespace = false
+
+# =============================================================================
+# ASP.NET Core configuration files
+# ASP.NET Core 設定檔案
+# =============================================================================
+
+# App settings
+# 應用程式設定
+[appsettings*.json]
+indent_size = 2
+end_of_line = lf
+
+# Launch settings (IIS Express, Kestrel)
+# 啟動設定 (IIS Express, Kestrel)
+[launchSettings.json]
+indent_size = 2
+end_of_line = lf
+
+# Bundler config
+# 打包器設定
+[bundleconfig.json]
+indent_size = 2
+end_of_line = lf
+
+# =============================================================================
+# ASP.NET Core Razor specific code style
+# ASP.NET Core Razor 特定程式碼風格
+# =============================================================================
+[*.{cshtml,razor}]
+
+# Razor directive formatting
+# Razor 指示詞格式化
+csharp_indent_case_contents = true
+csharp_indent_switch_labels = true
+
+# HTML formatting in Razor
+# Razor 中的 HTML 格式化
+max_line_length = 140
+
+# Code blocks in Razor
+# Razor 中的程式碼區塊應遵循 C# 規則
+csharp_new_line_before_open_brace = all
+csharp_space_after_keywords_in_control_flow_statements = true
+
+# =============================================================================
+# ASP.NET Core specific code analysis rules
+# ASP.NET Core 特定程式碼分析規則
+# =============================================================================
+[*.cs]
+
+# MVC1000: Use of IHtmlContent in Razor
+# MVC1000: 在 Razor 中使用 IHtmlContent
+dotnet_diagnostic.MVC1000.severity = warning
+
+# MVC1001: Filters cannot be applied to page handler methods
+# MVC1001: 篩選器不能套用至頁面處理常式方法
+dotnet_diagnostic.MVC1001.severity = warning
+
+# MVC1002: Route attributes cannot be applied to page handler methods
+# MVC1002: 路由屬性不能套用至頁面處理常式方法
+dotnet_diagnostic.MVC1002.severity = warning
+
+# MVC1003: Route attribute cannot be applied to page handler methods
+# MVC1003: 路由屬性不能套用至頁面處理常式方法
+dotnet_diagnostic.MVC1003.severity = warning
+
+# MVC1004: Rename model bound parameter
+# MVC1004: 重新命名模型繫結參數
+dotnet_diagnostic.MVC1004.severity = warning
+
+# MVC1005: Cannot use UseMvc with Endpoint Routing
+# MVC1005: 無法搭配端點路由使用 UseMvc
+dotnet_diagnostic.MVC1005.severity = error
+
+# MVC1006: Methods containing TagHelpers must be async and return Task
+# MVC1006: 包含 TagHelper 的方法必須是非同步並傳回 Task
+dotnet_diagnostic.MVC1006.severity = error
+
+# ASP0000: Do not call 'IServiceCollection.BuildServiceProvider' in 'ConfigureServices'
+# ASP0000: 不要在 'ConfigureServices' 中呼叫 'IServiceCollection.BuildServiceProvider'
+dotnet_diagnostic.ASP0000.severity = error
+
+# ASP0001: Authorization middleware is incorrectly configured
+# ASP0001: 授權中介軟體設定不正確
+dotnet_diagnostic.ASP0001.severity = error
+
+# ASP0003: Do not use model binding attributes with FromBodyAttribute
+# ASP0003: 不要將模型繫結屬性與 FromBodyAttribute 一起使用
+dotnet_diagnostic.ASP0003.severity = warning
+
+# ASP0004: Do not use action results with IResult
+# ASP0004: 不要將動作結果與 IResult 一起使用
+dotnet_diagnostic.ASP0004.severity = warning
+
+# ASP0005: Do not place attribute on method called by route handler lambda
+# ASP0005: 不要在路由處理常式 Lambda 呼叫的方法上放置屬性
+dotnet_diagnostic.ASP0005.severity = warning
+
+# =============================================================================
+# libman.json (Library Manager)
+# libman.json (函式庫管理員)
+# =============================================================================
+[libman.json]
+indent_size = 2
+end_of_line = lf

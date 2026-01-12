@@ -1,0 +1,20 @@
+<Project>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <NoWarn>IDE0046;IDE0053;</NoWarn>
+    <RootNamespace />
+
+    <!-- NuGet Package 基本資訊 -->
+    <PackageId>$(AssemblyName)</PackageId>
+    <Title>$(AssemblyName)</Title>
+    <Authors>Yuu</Authors>
+    <Company>Yuu</Company>
+    <Copyright>Copyright © 2025 YourCompany</Copyright>
+    <RepositoryUrl>https://github.com/yy556023/yuu-framework-modules</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+</Project>

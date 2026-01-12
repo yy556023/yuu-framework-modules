@@ -1,0 +1,198 @@
+# =============================================================================
+# 基本設定：自動偵測文字檔案
+# =============================================================================
+* text=auto
+
+# =============================================================================
+# .NET / C# 相關檔案
+# =============================================================================
+*.cs        text diff=csharp eol=lf
+*.csx       text diff=csharp eol=lf
+*.csproj    text eol=lf
+*.sln       text eol=lf
+*.slnx      text eol=lf
+*.props     text eol=lf
+*.targets   text eol=lf
+*.ruleset   text eol=lf
+*.config    text eol=lf
+*.nuspec    text eol=lf
+
+# .NET Core / ASP.NET Core 設定檔
+appsettings*.json       text eol=lf
+launchSettings.json     text eol=lf
+bundleconfig.json       text eol=lf
+
+# =============================================================================
+# 前端 / Angular 相關檔案
+# =============================================================================
+*.js        text eol=lf
+*.ts        text eol=lf
+*.jsx       text eol=lf
+*.tsx       text eol=lf
+*.json      text eol=lf
+*.css       text eol=lf
+*.scss      text eol=lf
+*.sass      text eol=lf
+*.less      text eol=lf
+*.html      text eol=lf
+*.htm       text eol=lf
+*.vue       text eol=lf
+
+# Angular 特定檔案
+angular.json            text eol=lf
+tsconfig*.json          text eol=lf
+package.json            text eol=lf
+package-lock.json       text eol=lf -diff
+.browserslistrc         text eol=lf
+karma.conf.js           text eol=lf
+
+# =============================================================================
+# 資料格式檔案
+# =============================================================================
+*.xml       text eol=lf
+*.yaml      text eol=lf
+*.yml       text eol=lf
+*.toml      text eol=lf
+*.csv       text eol=lf
+
+# =============================================================================
+# 文件檔案
+# =============================================================================
+*.md        text eol=lf
+*.txt       text eol=lf
+*.adoc      text eol=lf
+*.rst       text eol=lf
+LICENSE     text eol=lf
+AUTHORS     text eol=lf
+CHANGELOG   text eol=lf
+CONTRIBUTING text eol=lf
+
+# =============================================================================
+# Docker / Kubernetes 相關檔案（必須使用 LF）
+# =============================================================================
+Dockerfile*         text eol=lf
+*.dockerfile        text eol=lf
+docker-compose*.yml text eol=lf
+.dockerignore       text eol=lf
+
+# Kubernetes manifests
+*.k8s.yaml          text eol=lf
+*.k8s.yml           text eol=lf
+
+# Helm Charts
+Chart.yaml          text eol=lf
+values*.yaml        text eol=lf
+
+# =============================================================================
+# Shell Scripts（必須使用 LF）
+# =============================================================================
+*.sh        text eol=lf
+*.bash      text eol=lf
+*.zsh       text eol=lf
+
+# =============================================================================
+# Windows 特定檔案（必須使用 CRLF）
+# =============================================================================
+*.bat       text eol=crlf
+*.cmd       text eol=crlf
+*.ps1       text eol=crlf
+*.psm1      text eol=crlf
+
+# =============================================================================
+# CI/CD 相關檔案
+# =============================================================================
+# Azure DevOps
+azure-pipelines*.yml    text eol=lf
+
+# GitLab CI
+.gitlab-ci.yml          text eol=lf
+
+# GitHub Actions
+.github/**/*.yml        text eol=lf
+.github/**/*.yaml       text eol=lf
+
+# =============================================================================
+# 版本控制相關檔案
+# =============================================================================
+.gitignore      text eol=lf
+.gitattributes  text eol=lf
+.editorconfig   text eol=lf
+.eslintrc*      text eol=lf
+.prettierrc*    text eol=lf
+
+# =============================================================================
+# 資料庫相關檔案
+# =============================================================================
+*.sql       text eol=lf
+
+# Entity Framework Migrations
+**/Migrations/*.cs  text diff=csharp eol=lf
+
+# =============================================================================
+# 二進位檔案（不做行尾轉換）
+# =============================================================================
+# 圖片
+*.png       binary
+*.jpg       binary
+*.jpeg      binary
+*.gif       binary
+*.ico       binary
+*.svg       binary
+*.webp      binary
+*.bmp       binary
+*.tiff      binary
+
+# 字型
+*.ttf       binary
+*.otf       binary
+*.woff      binary
+*.woff2     binary
+*.eot       binary
+
+# 影音
+*.mp3       binary
+*.mp4       binary
+*.avi       binary
+*.mov       binary
+*.wmv       binary
+*.wav       binary
+
+# 壓縮檔
+*.zip       binary
+*.7z        binary
+*.gz        binary
+*.tar       binary
+*.rar       binary
+
+# 執行檔與函式庫
+*.exe       binary
+*.dll       binary
+*.so        binary
+*.dylib     binary
+
+# .NET 編譯產物
+*.pdb       binary
+
+# 其他二進位格式
+*.pdf       binary
+*.docx      binary
+*.xlsx      binary
+
+# NuGet packages
+*.nupkg     binary
+
+# =============================================================================
+# 供應商/第三方程式庫（標記為 vendored，不計入統計）
+# =============================================================================
+**/wwwroot/libs/**      linguist-vendored
+**/node_modules/**      linguist-vendored
+**/packages/**          linguist-vendored
+**/bower_components/**  linguist-vendored
+
+# =============================================================================
+# 大型檔案或產生的檔案（不納入 diff）
+# =============================================================================
+package-lock.json       -diff
+yarn.lock               -diff
+*.min.js                -diff
+*.min.css               -diff

@@ -1,0 +1,18 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+    <File Path=".prettierrc" />
+    <File Path="common.props" />
+    <File Path="Directory.Packages.props" />
+    <File Path="NuGet.Config" />
+  </Folder>
+  <Project Path="src/Yuu.AspNetCore.Hosting/Yuu.AspNetCore.Hosting.csproj" Id="1681ab93-8cf4-44a5-a35f-cbe79ea71a69" />
+  <Project Path="src/Yuu.AspNetCore.Middleware/Yuu.AspNetCore.Middleware.csproj" Id="c632f06b-7bfb-4521-98d4-1da96efe2a38" />
+  <Project Path="src/Yuu.AspNetCore.Mvc/Yuu.AspNetCore.Mvc.csproj" Id="40de3a54-4dd8-4531-8862-ad0687b87f13" />
+  <Project Path="src/Yuu.ClientInfo.Provider.Abstractions/Yuu.ClientInfo.Provider.Abstractions.csproj" Id="18dc29dc-e23b-4417-9612-f5234cbe1cc7" />
+  <Project Path="src/Yuu.ClientInfo.Provider/Yuu.ClientInfo.Provider.csproj" Id="428e7976-1ddb-481b-a55e-0cbd86ebed33" />
+  <Project Path="src/Yuu.Environment.Provider.Abstractions/Yuu.Environment.Provider.Abstractions.csproj" Id="52ec1f75-cccd-4a48-9846-51acf078c853" />
+  <Project Path="src/Yuu.Environment.Provider/Yuu.Environment.Provider.csproj" Id="1a49e206-acb0-4d16-9bee-9edf356112fe" />
+</Solution>
