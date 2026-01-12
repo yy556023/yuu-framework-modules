@@ -15,6 +15,7 @@
     <Copyright>Copyright © 2025 YourCompany</Copyright>
     <RepositoryUrl>https://github.com/yy556023/yuu-framework-modules</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <PackageOutputPath>nuget</PackageOutputPath>
   </PropertyGroup>
 
 </Project>
