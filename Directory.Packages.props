@@ -1,4 +1,5 @@
 <Project>
+  
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
@@ -6,6 +7,7 @@
     <!-- Do not warn for missing source mappings -->
     <NoWarn>$(NoWarn);NU1507</NoWarn>
   </PropertyGroup>
+  
   <ItemGroup>
     <PackageVersion Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Http" Version="2.3.9" />
@@ -18,5 +20,11 @@
     <PackageVersion Include="Volo.Abp.Core" Version="10.0.2" />
     <PackageVersion Include="Yuu.ClientInfo.Provider.Abstractions" Version="10.0.0" />
     <PackageVersion Include="Yuu.Environment.Provider.Abstractions" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="10.0.1" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.1" />
+    <PackageVersion Include="Volo.Abp.Data" Version="10.0.2" />
+    <PackageVersion Include="Volo.Abp.Ddd.Domain" Version="10.0.2" />
+    <PackageVersion Include="Volo.Abp.EntityFrameworkCore" Version="10.0.2" />
   </ItemGroup>
+  
 </Project>

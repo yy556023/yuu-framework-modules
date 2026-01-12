@@ -8,6 +8,7 @@
     <File Path="Directory.Packages.props" />
     <File Path="NuGet.Config" />
   </Folder>
+  <Project Path="src/Yuu.Abp.EntityFrameworkCore/Yuu.Abp.EntityFrameworkCore.csproj" Id="94ef706c-681b-4845-abad-0416bfaac601" />
   <Project Path="src/Yuu.AspNetCore.Hosting/Yuu.AspNetCore.Hosting.csproj" Id="1681ab93-8cf4-44a5-a35f-cbe79ea71a69" />
   <Project Path="src/Yuu.AspNetCore.Middleware/Yuu.AspNetCore.Middleware.csproj" Id="c632f06b-7bfb-4521-98d4-1da96efe2a38" />
   <Project Path="src/Yuu.AspNetCore.Mvc/Yuu.AspNetCore.Mvc.csproj" Id="40de3a54-4dd8-4531-8862-ad0687b87f13" />
