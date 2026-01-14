@@ -15,8 +15,10 @@ public static class HostBuilderConfigurationExtensions
         {
             envName ??= context.HostingEnvironment.EnvironmentName;
 
+            var fileName = string.IsNullOrWhiteSpace(envName) ? "appsettings.json" : $"appsettings.{envName}.json";
+
             builder.AddJsonFile(
-                path: $"appsettings.{envName}.json",
+                path: fileName,
                 optional: optional,
                 reloadOnChange: reloadOnChange);
         });
