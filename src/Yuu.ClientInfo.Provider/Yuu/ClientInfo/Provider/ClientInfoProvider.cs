@@ -3,7 +3,7 @@ using Volo.Abp.DependencyInjection;
 
 namespace Yuu.ClientInfo.Provider;
 
-public class ClientInfoProvider : IClientInfoProvider, ISingletonDependency
+public class ClientInfoProvider : IClientInfoProvider, ITransientDependency
 {
     private readonly IWebClientInfoProvider _webClientInfoProvider;
 
