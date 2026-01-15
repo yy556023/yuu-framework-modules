@@ -5,7 +5,7 @@ namespace Yuu.Environment.Provider.Extensions;
 /// <summary>
 /// Extension methods for <see cref="IHostEnvironment"/>.
 /// </summary>
-public static class HostEnvironmentEnvExtensions
+public static class YuuEnvironmentExtensions
 {
     public static bool IsLocal(this IHostEnvironment hostEnvironment)
     {

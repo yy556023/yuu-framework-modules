@@ -4,11 +4,11 @@ using Yuu.Environment.Provider.Extensions;
 
 namespace Yuu.Environment.Provider;
 
-public class HostEnvironmentProvider : IEnvironmentProvider, ISingletonDependency
+public class YuuEnvironmentProvider : IEnvironmentProvider, ITransientDependency
 {
     private readonly IHostEnvironment _env;
 
-    public HostEnvironmentProvider(IHostEnvironment env)
+    public YuuEnvironmentProvider(IHostEnvironment env)
     {
         _env = env;
     }
