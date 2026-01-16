@@ -3,7 +3,7 @@
   <Import Project="..\..\common.props" />
 
   <PropertyGroup>
-    <Version>10.0.0</Version>
+    <Version>10.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,4 +12,8 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
   </ItemGroup>
 
+  <ItemGroup Label="Yuu">
+    <PackageReference Include="Yuu.Environment.Provider.Abstractions" />
+  </ItemGroup>
+  
 </Project>

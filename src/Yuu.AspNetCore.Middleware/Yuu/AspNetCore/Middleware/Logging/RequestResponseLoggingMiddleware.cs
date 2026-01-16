@@ -4,11 +4,12 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Yuu.Environment.Provider;
 
 namespace Yuu.AspNetCore.Middleware.Logging;
 
@@ -16,13 +17,17 @@ public class RequestResponseLoggingMiddleware
 {
     private readonly RequestDelegate _next;
     private readonly ILogger<RequestResponseLoggingMiddleware> _logger;
-    private readonly IHostEnvironment _environment;
+    private readonly IEnvironmentProvider _environment;
     private const int MaxBodyLogLength = 10000; // 避免過大的 body
+    private JsonSerializerOptions _jsonOptions = new JsonSerializerOptions
+    {
+        WriteIndented = true
+    };
 
     public RequestResponseLoggingMiddleware(
         RequestDelegate next,
         ILogger<RequestResponseLoggingMiddleware> logger,
-        IHostEnvironment environment
+        IEnvironmentProvider environment
     )
     {
         _next = next;
@@ -135,11 +140,12 @@ public class RequestResponseLoggingMiddleware
         }
 
         // TODO: 待引用
-        if (_environment.IsDevelopment())
+        if (_environment.IsLocal())
         {
             // 本地 Seq: 使用格式化輸出,易於閱讀
             _logger.Log(logLevel,
                 """
+
                 ╔══════════════════════════════════════════════════════════════
                 ║ 🔄 HTTP Transaction
                 ╠══════════════════════════════════════════════════════════════
@@ -169,8 +175,8 @@ public class RequestResponseLoggingMiddleware
                 statusCode,
                 elapsedMs,
                 request.ContentType ?? "(none)",
-                string.IsNullOrWhiteSpace(truncatedRequestBody) ? "(empty)" : truncatedRequestBody,
-                string.IsNullOrWhiteSpace(truncatedResponseBody) ? "(empty)" : truncatedResponseBody
+                string.IsNullOrWhiteSpace(truncatedRequestBody) ? "(empty)" : TryFormatJson(truncatedRequestBody),
+                string.IsNullOrWhiteSpace(truncatedResponseBody) ? "(empty)" : TryFormatJson(truncatedResponseBody)
             );
         }
         else
@@ -180,7 +186,7 @@ public class RequestResponseLoggingMiddleware
             {
                 ["TraceId"] = traceId,
                 ["TransactionType"] = "HTTP",
-                ["Environment"] = _environment.EnvironmentName
+                ["Environment"] = _environment.EnvName
             }))
             {
                 _logger.Log(logLevel,
@@ -337,5 +343,36 @@ public class RequestResponseLoggingMiddleware
         };
 
         return loggableTypes.Any(contentType.Contains);
+    }
+
+    private string TryFormatJson(string input)
+    {
+        if (string.IsNullOrWhiteSpace(input))
+        {
+            return input;
+        }
+
+        try
+        {
+            using var doc = JsonDocument.Parse(input);
+            var text = System.Environment.NewLine + PrefixEachLine(JsonSerializer.Serialize(doc, _jsonOptions));
+
+            return text;
+        }
+        catch
+        {
+            return input; // 不是 JSON 就原樣輸出
+        }
+    }
+
+    private string PrefixEachLine(string text, string prefix = "║")
+    {
+        if (string.IsNullOrEmpty(text))
+        {
+            return text;
+        }
+
+        var lines = text.Split(System.Environment.NewLine);
+        return string.Join(System.Environment.NewLine, lines.Select(line => $"{prefix}{line}"));
     }
 }
