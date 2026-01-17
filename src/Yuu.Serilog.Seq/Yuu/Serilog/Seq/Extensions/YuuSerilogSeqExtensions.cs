@@ -2,7 +2,7 @@ using Serilog;
 
 namespace Yuu.Serilog.Seq.Extensions;
 
-public static class YuuSeqSerilogExtensions
+public static class YuuSerilogSeqExtensions
 {
     public static LoggerConfiguration UseSeqAsync(this LoggerConfiguration c, string serverUrl = "http://localhost:5341")
     {

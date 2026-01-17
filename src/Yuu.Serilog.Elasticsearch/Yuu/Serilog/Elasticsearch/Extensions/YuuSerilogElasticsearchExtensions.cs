@@ -8,7 +8,7 @@ using Serilog;
 
 namespace Yuu.Serilog.Elasticsearch.Extensions;
 
-public static class YuuElasticsearchSerilogExtensions
+public static class YuuSerilogElasticsearchExtensions
 {
     public static LoggerConfiguration UseElasticsearchAsync(
         this LoggerConfiguration c,
