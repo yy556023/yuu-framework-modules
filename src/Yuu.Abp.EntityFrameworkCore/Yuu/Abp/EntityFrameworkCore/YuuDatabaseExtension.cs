@@ -85,7 +85,14 @@ public static class YuuDatabaseExtension
                 var fkName = foreignKey.GetConstraintName();
                 if (!string.IsNullOrEmpty(fkName))
                 {
-                    foreignKey.SetConstraintName(ToSnakeCase(fkName));
+                    var convertedName = ToSnakeCase(fkName);
+                    // MySQL FK 名稱限制為 64 字元
+                    if (convertedName.Length > 64)
+                    {
+                        convertedName = convertedName[..64];
+                    }
+
+                    foreignKey.SetConstraintName(convertedName);
                 }
             }
 
@@ -95,7 +102,14 @@ public static class YuuDatabaseExtension
                 var indexName = index.GetDatabaseName();
                 if (!string.IsNullOrEmpty(indexName))
                 {
-                    index.SetDatabaseName(ToSnakeCase(indexName));
+                    var convertedName = ToSnakeCase(indexName);
+                    // MySQL 索引名稱限制為 64 字元
+                    if (convertedName.Length > 64)
+                    {
+                        convertedName = convertedName[..64];
+                    }
+
+                    index.SetDatabaseName(convertedName);
                 }
             }
 
