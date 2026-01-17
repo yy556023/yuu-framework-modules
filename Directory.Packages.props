@@ -14,19 +14,19 @@
 
   <ItemGroup Label="Microsoft">
     <PackageVersion Include="Microsoft.AspNetCore.Http" Version="2.3.9" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="10.0.2" />
-    <PackageVersion Include="Microsoft.Extensions.Hosting.Abstractions" Version="10.0.2" />
-    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.2" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="10.0.2" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.2" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="9.0.12" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting.Abstractions" Version="9.0.12" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.12" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="9.0.12" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.12" />
   </ItemGroup>
 
   <ItemGroup Label="Volo">
-    <PackageVersion Include="Volo.Abp.AspNetCore.Abstractions" Version="10.0.2" />
-    <PackageVersion Include="Volo.Abp.Core" Version="10.0.2" />
-    <PackageVersion Include="Volo.Abp.Data" Version="10.0.2" />
-    <PackageVersion Include="Volo.Abp.Ddd.Domain" Version="10.0.2" />
-    <PackageVersion Include="Volo.Abp.EntityFrameworkCore" Version="10.0.2" />
+    <PackageVersion Include="Volo.Abp.AspNetCore.Abstractions" Version="9.3.7" />
+    <PackageVersion Include="Volo.Abp.Core" Version="9.3.7" />
+    <PackageVersion Include="Volo.Abp.Data" Version="9.3.7" />
+    <PackageVersion Include="Volo.Abp.Ddd.Domain" Version="9.3.7" />
+    <PackageVersion Include="Volo.Abp.EntityFrameworkCore" Version="9.3.7" />
   </ItemGroup>
 
   <ItemGroup Label="Seriog">
@@ -37,8 +37,8 @@
   </ItemGroup>
 
   <ItemGroup Label="Yuu">
-    <PackageVersion Include="Yuu.ClientInfo.Provider.Abstractions" Version="10.0.0" />
-    <PackageVersion Include="Yuu.Environment.Provider.Abstractions" Version="10.0.0" />
+    <PackageVersion Include="Yuu.ClientInfo.Provider.Abstractions" Version="9.0.0" />
+    <PackageVersion Include="Yuu.Environment.Provider.Abstractions" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup Label="DoNotUpgrade">
