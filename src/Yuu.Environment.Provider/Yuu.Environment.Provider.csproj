@@ -8,8 +8,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" />
-    <PackageReference Include="Volo.Abp.Core" />
     <PackageReference Include="Yuu.Environment.Provider.Abstractions" />
+    <PackageReference Include="Volo.Abp.Core" />
   </ItemGroup>
 
 </Project>

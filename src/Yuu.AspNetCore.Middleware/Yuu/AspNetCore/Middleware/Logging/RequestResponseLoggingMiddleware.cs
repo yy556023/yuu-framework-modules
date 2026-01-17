@@ -19,7 +19,7 @@ public class RequestResponseLoggingMiddleware
     private readonly ILogger<RequestResponseLoggingMiddleware> _logger;
     private readonly IEnvironmentProvider _environment;
     private const int MaxBodyLogLength = 10000; // 避免過大的 body
-    private JsonSerializerOptions _jsonOptions = new JsonSerializerOptions
+    private readonly JsonSerializerOptions _jsonOptions = new JsonSerializerOptions
     {
         WriteIndented = true
     };
