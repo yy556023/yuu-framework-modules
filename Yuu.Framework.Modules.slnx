@@ -14,6 +14,7 @@
   <Project Path="src/Yuu.AspNetCore.Mvc/Yuu.AspNetCore.Mvc.csproj" Id="40de3a54-4dd8-4531-8862-ad0687b87f13" />
   <Project Path="src/Yuu.ClientInfo.Provider.Abstractions/Yuu.ClientInfo.Provider.Abstractions.csproj" Id="18dc29dc-e23b-4417-9612-f5234cbe1cc7" />
   <Project Path="src/Yuu.ClientInfo.Provider/Yuu.ClientInfo.Provider.csproj" Id="428e7976-1ddb-481b-a55e-0cbd86ebed33" />
+  <Project Path="src/Yuu.EntityFrameworkCore.Logging/Yuu.EntityFrameworkCore.Logging.csproj" Id="a64e29bf-253e-4615-b39d-5d0307dfbbdf" />
   <Project Path="src/Yuu.Environment.Provider.Abstractions/Yuu.Environment.Provider.Abstractions.csproj" Id="52ec1f75-cccd-4a48-9846-51acf078c853" />
   <Project Path="src/Yuu.Environment.Provider/Yuu.Environment.Provider.csproj" Id="1a49e206-acb0-4d16-9bee-9edf356112fe" />
   <Project Path="src/Yuu.Serilog.Elasticsearch/Yuu.Serilog.Elasticsearch.csproj" Id="369edd0c-3edc-46b9-a6c3-5a1dd30ce53e" />
