@@ -6,7 +6,7 @@ using Serilog.Sinks.GoogleCloudLogging;
 
 namespace Yuu.Serilog.GoogleCloudLogging.Extensions;
 
-public static class YuuGoogleCloudLoggingSerilogExtensions
+public static class YuuSerilogGoogleCloudLoggingExtensions
 {
     public static LoggerConfiguration UseGoogleCloudLoggingAsync(
         this LoggerConfiguration c,
