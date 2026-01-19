@@ -13,7 +13,7 @@ public static class HostBuilderConfigurationExtensions
     {
         return hostBuilder.ConfigureAppConfiguration((context, builder) =>
         {
-            envName ??= context.HostingEnvironment.EnvironmentName;
+            envName ??= System.Environment.GetEnvironmentVariable(EnvironmentVariables.AspNetCoreEnvironment);
 
             var fileName = string.IsNullOrWhiteSpace(envName) ? "appsettings.json" : $"appsettings.{envName}.json";
 
