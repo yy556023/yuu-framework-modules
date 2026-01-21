@@ -7,8 +7,13 @@ namespace Yuu.EntityFrameworkCore.Logging.Extensions;
 
 public static class YuuEfCoreSqlLoggingExtensions
 {
-    public static DbContextOptionsBuilder AddEfCoreSqlLoggingInterceptors(this DbContextOptionsBuilder builder, IAbpLazyServiceProvider serviceProvider)
+    public static DbContextOptionsBuilder TryAddEfCoreSqlLoggingInterceptors(this DbContextOptionsBuilder builder, IAbpLazyServiceProvider serviceProvider)
     {
+        if (serviceProvider == null)
+        {
+            return builder;
+        }
+
         var dbCommandInterceptor = serviceProvider.GetRequiredService<IToQueryStringCommandInterceptor>();
         builder.AddInterceptors(dbCommandInterceptor);
 

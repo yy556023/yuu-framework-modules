@@ -3,7 +3,7 @@
   <Import Project="..\..\common.props" />
 
   <PropertyGroup>
-    <Version>9.0.1</Version>
+    <Version>9.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup Label="Microsoft">
