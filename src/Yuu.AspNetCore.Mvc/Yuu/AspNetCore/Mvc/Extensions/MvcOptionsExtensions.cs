@@ -9,6 +9,6 @@ public static class MvcOptionsExtensions
 {
     public static void UseSlugifiedRoutes(this MvcOptions options)
     {
-        options.Conventions.Add(new RouteTokenTransformerConvention(new SlugifyParameterTransformer()));
+        options.Conventions.Add(new RouteTokenTransformerConvention(new PluralizedSlugifyParameterTransformer()));
     }
 }
