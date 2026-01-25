@@ -7,7 +7,7 @@ namespace Yuu.AspNetCore.Mvc.Extensions;
 
 public static class MvcOptionsExtensions
 {
-    public static void UseSlugifiedRoutes(this MvcOptions options)
+    public static void UsePluralizedSlugifiedRoutes(this MvcOptions options)
     {
         options.Conventions.Add(new RouteTokenTransformerConvention(new PluralizedSlugifyParameterTransformer()));
     }
