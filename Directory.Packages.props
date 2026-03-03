@@ -22,11 +22,11 @@
   </ItemGroup>
 
   <ItemGroup Label="Volo">
-    <PackageVersion Include="Volo.Abp.AspNetCore.Abstractions" Version="10.0.2" />
-    <PackageVersion Include="Volo.Abp.Core" Version="10.0.2" />
-    <PackageVersion Include="Volo.Abp.Data" Version="10.0.2" />
-    <PackageVersion Include="Volo.Abp.Ddd.Domain" Version="10.0.2" />
-    <PackageVersion Include="Volo.Abp.EntityFrameworkCore" Version="10.0.2" />
+    <PackageVersion Include="Volo.Abp.AspNetCore.Abstractions" Version="10.1.1" />
+    <PackageVersion Include="Volo.Abp.Core" Version="10.1.1" />
+    <PackageVersion Include="Volo.Abp.Data" Version="10.1.1" />
+    <PackageVersion Include="Volo.Abp.Ddd.Domain" Version="10.1.1" />
+    <PackageVersion Include="Volo.Abp.EntityFrameworkCore" Version="10.1.1" />
   </ItemGroup>
 
   <ItemGroup Label="Seriog">

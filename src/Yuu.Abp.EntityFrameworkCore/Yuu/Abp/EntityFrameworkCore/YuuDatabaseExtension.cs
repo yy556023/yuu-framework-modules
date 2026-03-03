@@ -1,4 +1,3 @@
-using System;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
@@ -16,6 +15,11 @@ public static class YuuDatabaseExtension
 
         foreach (var entity in entities)
         {
+            if (entity.IsOwned() || entity.ClrType == null)
+            {
+                continue;
+            }
+
             if (entity.FindPrimaryKey() == null)
             {
                 continue;
