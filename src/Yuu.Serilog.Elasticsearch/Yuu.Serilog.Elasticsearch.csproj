@@ -2,10 +2,6 @@
 
   <Import Project="..\..\common.props" />
 
-  <PropertyGroup>
-    <Version>9.0.1</Version>
-  </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Serilog.Sinks.Async" />
     <PackageReference Include="Elastic.Serilog.Sinks" />

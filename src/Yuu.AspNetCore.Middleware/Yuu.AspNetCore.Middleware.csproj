@@ -2,17 +2,10 @@
 
   <Import Project="..\..\common.props" />
 
-  <PropertyGroup>
-    <Version>9.0.0</Version>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Http" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
-  </ItemGroup>
-
+  <!-- Microsoft.AspNetCore.Http 與 Logging.Abstractions 由 FrameworkReference 自動提供，
+       顯式引用會觸發 NU1510。 -->
   <ItemGroup Label="Yuu">
-    <PackageReference Include="Yuu.Environment.Provider.Abstractions" />
+    <ProjectReference Include="..\Yuu.Environment.Provider.Abstractions\Yuu.Environment.Provider.Abstractions.csproj" />
   </ItemGroup>
 
   <ItemGroup>
