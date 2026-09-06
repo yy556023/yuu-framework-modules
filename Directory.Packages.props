@@ -1,4 +1,4 @@
-<Project>
+﻿<Project>
   
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
@@ -9,16 +9,16 @@
   </PropertyGroup>
   
   <ItemGroup Label="Newtonsoft">
-    <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageVersion Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup Label="Microsoft">
     <PackageVersion Include="Microsoft.AspNetCore.Http" Version="2.3.9" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="9.0.12" />
-    <PackageVersion Include="Microsoft.Extensions.Hosting.Abstractions" Version="9.0.12" />
-    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.12" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="9.0.12" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.12" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="9.0.5" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting.Abstractions" Version="9.0.5" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.5" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="9.0.5" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.5" />
   </ItemGroup>
 
   <ItemGroup Label="Volo">
@@ -34,11 +34,6 @@
     <PackageVersion Include="Serilog.Sinks.Seq" Version="9.0.0" />
     <PackageVersion Include="Elastic.Serilog.Sinks" Version="9.0.0" />
     <PackageVersion Include="Serilog.Sinks.GoogleCloudLogging" Version="5.0.0" />
-  </ItemGroup>
-
-  <ItemGroup Label="Yuu">
-    <PackageVersion Include="Yuu.ClientInfo.Provider.Abstractions" Version="9.0.0" />
-    <PackageVersion Include="Yuu.Environment.Provider.Abstractions" Version="9.0.0" />
   </ItemGroup>
 
 </Project>
