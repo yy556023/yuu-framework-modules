@@ -1,7 +1,12 @@
-<Project>
+﻿<Project>
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
+    <!-- lockstep 版本：整個 repo 的套件共用同一個版號，一起發布。
+         代價是沒改的套件也會跟著升版；換來的是「同一批 Yuu.* 必定相容」這個保證。
+         ⚠ 消費端的 Directory.Packages.props 必須把所有 Yuu.* 一起升到同一版，
+           只升其中幾個會因為 ProjectReference 推導出的相依而觸發 NU1109 降版錯誤。 -->
+    <Version>10.2.0</Version>
     <Nullable>enable</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
     <NoWarn>IDE0046;IDE0053;</NoWarn>

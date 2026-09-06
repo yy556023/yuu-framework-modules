@@ -2,13 +2,9 @@
 
   <Import Project="..\..\common.props" />
 
-  <PropertyGroup>
-    <Version>10.1.1</Version>
-  </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" />
-    <PackageReference Include="Yuu.Environment.Provider.Abstractions" />
+    <ProjectReference Include="..\Yuu.Environment.Provider.Abstractions\Yuu.Environment.Provider.Abstractions.csproj" />
     <PackageReference Include="Volo.Abp.Core" />
   </ItemGroup>
 

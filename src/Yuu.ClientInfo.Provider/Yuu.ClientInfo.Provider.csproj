@@ -2,14 +2,10 @@
 
   <Import Project="..\..\common.props" />
 
-  <PropertyGroup>
-    <Version>10.1.1</Version>
-  </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Volo.Abp.AspNetCore.Abstractions" />
     <PackageReference Include="Volo.Abp.Core" />
-    <PackageReference Include="Yuu.ClientInfo.Provider.Abstractions" />
+    <ProjectReference Include="..\Yuu.ClientInfo.Provider.Abstractions\Yuu.ClientInfo.Provider.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>
