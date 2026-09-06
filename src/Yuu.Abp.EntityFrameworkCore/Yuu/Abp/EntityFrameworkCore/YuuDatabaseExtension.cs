@@ -1,6 +1,7 @@
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
+using System;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore.Modeling;
 using Yuu.Abp.EntityFrameworkCore.Modeling;
@@ -15,11 +16,6 @@ public static class YuuDatabaseExtension
 
         foreach (var entity in entities)
         {
-            if (entity.IsOwned() || entity.ClrType == null)
-            {
-                continue;
-            }
-
             if (entity.FindPrimaryKey() == null)
             {
                 continue;
@@ -28,24 +24,35 @@ public static class YuuDatabaseExtension
             // 取得屬性描述並設定為欄位註解
             var clrType = entity.ClrType;
 
-            builder.Entity(clrType)
-                .ConfigureByConvention();
-
-            builder.Entity(clrType)
-                .ConfigureCommentByConvention();
-
-            builder.Entity(clrType)
-                .ApplyObjectExtensionMappings();
-
-            foreach (var prop in clrType.GetProperties())
+            // EF Core 10 的 Identity passkey data 是 owned type；重新呼叫 Entity(clrType)
+            // 會嘗試把它改成一般 entity，導致 design-time model 無法建立。
+            if (!entity.IsOwned())
             {
-                var description = prop.GetCustomAttribute<DescriptionAttribute>()?.Description;
-                if (!string.IsNullOrEmpty(description))
+                builder.Entity(clrType)
+                    .ConfigureByConvention();
+
+                builder.Entity(clrType)
+                    .ConfigureCommentByConvention();
+
+                builder.Entity(clrType)
+                    .ApplyObjectExtensionMappings();
+
+                foreach (var prop in clrType.GetProperties())
                 {
-                    builder.Entity(clrType)
-                        .Property(prop.Name)
-                        .HasComment(description);
+                    var description = prop.GetCustomAttribute<DescriptionAttribute>()?.Description;
+                    if (!string.IsNullOrEmpty(description))
+                    {
+                        builder.Entity(clrType)
+                            .Property(prop.Name)
+                            .HasComment(description);
+                    }
                 }
+            }
+
+            // JSON-mapped owned type 使用 JSON property name，不可再設定 relational column name。
+            if (entity.IsMappedToJson())
+            {
+                continue;
             }
 
             // 轉換資料表名稱
@@ -167,4 +174,3 @@ public static class YuuDatabaseExtension
         return builder.ToString();
     }
 }
-

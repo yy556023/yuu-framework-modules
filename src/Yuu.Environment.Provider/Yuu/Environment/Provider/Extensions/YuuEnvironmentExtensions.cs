@@ -1,4 +1,4 @@
-using Microsoft.Extensions.Hosting;
+﻿using Microsoft.Extensions.Hosting;
 
 namespace Yuu.Environment.Provider.Extensions;
 
@@ -9,12 +9,12 @@ public static class YuuEnvironmentExtensions
 {
     public static bool IsLocal(this IHostEnvironment hostEnvironment)
     {
-        return hostEnvironment.EnvironmentName.Contains("local");
+        return string.IsNullOrEmpty(hostEnvironment.EnvironmentName);
     }
 
     public static bool IsDev(this IHostEnvironment hostEnvironment)
     {
-        return hostEnvironment.EnvironmentName.Contains("dev");
+        return hostEnvironment.EnvironmentName.Contains("dev") || hostEnvironment.EnvironmentName.Contains("develop");
     }
 
     public static bool IsStag(this IHostEnvironment hostEnvironment)
