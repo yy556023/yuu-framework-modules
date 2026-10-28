@@ -17,6 +17,7 @@
   <Project Path="src/Yuu.EntityFrameworkCore.Logging/Yuu.EntityFrameworkCore.Logging.csproj" Id="a64e29bf-253e-4615-b39d-5d0307dfbbdf" />
   <Project Path="src/Yuu.Environment.Provider.Abstractions/Yuu.Environment.Provider.Abstractions.csproj" Id="52ec1f75-cccd-4a48-9846-51acf078c853" />
   <Project Path="src/Yuu.Environment.Provider/Yuu.Environment.Provider.csproj" Id="1a49e206-acb0-4d16-9bee-9edf356112fe" />
+  <Project Path="src/Yuu.Observability/Yuu.Observability.csproj" Id="ed8de5c0-cd5d-411f-998d-02d0bf75a7c1" />
   <Project Path="src/Yuu.Serilog.Elasticsearch/Yuu.Serilog.Elasticsearch.csproj" Id="369edd0c-3edc-46b9-a6c3-5a1dd30ce53e" />
   <Project Path="src/Yuu.Serilog.GoogleCloudLogging/Yuu.Serilog.GoogleCloudLogging.csproj" Id="8c76fd60-5552-455a-ab5d-27792e5f778c" />
   <Project Path="src/Yuu.Serilog.Seq/Yuu.Serilog.Seq.csproj" Id="9c1bf978-69ed-47a9-836c-f9f371571a72" />
