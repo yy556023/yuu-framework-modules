@@ -21,4 +21,10 @@
   <Project Path="src/Yuu.Serilog.Elasticsearch/Yuu.Serilog.Elasticsearch.csproj" Id="369edd0c-3edc-46b9-a6c3-5a1dd30ce53e" />
   <Project Path="src/Yuu.Serilog.GoogleCloudLogging/Yuu.Serilog.GoogleCloudLogging.csproj" Id="8c76fd60-5552-455a-ab5d-27792e5f778c" />
   <Project Path="src/Yuu.Serilog.Seq/Yuu.Serilog.Seq.csproj" Id="9c1bf978-69ed-47a9-836c-f9f371571a72" />
+  <Folder Name="/test/">
+    <Project Path="test/Yuu.Abp.EntityFrameworkCore.Tests/Yuu.Abp.EntityFrameworkCore.Tests.csproj" />
+    <Project Path="test/Yuu.AspNetCore.Hosting.Tests/Yuu.AspNetCore.Hosting.Tests.csproj" />
+    <Project Path="test/Yuu.AspNetCore.Middleware.Tests/Yuu.AspNetCore.Middleware.Tests.csproj" />
+    <Project Path="test/Yuu.Serilog.Seq.Tests/Yuu.Serilog.Seq.Tests.csproj" />
+  </Folder>
 </Solution>
