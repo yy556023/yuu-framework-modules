@@ -8,20 +8,22 @@
     <File Path="Directory.Packages.props" />
     <File Path="NuGet.Config" />
   </Folder>
-  <Project Path="src/Yuu.Abp.EntityFrameworkCore/Yuu.Abp.EntityFrameworkCore.csproj" Id="94ef706c-681b-4845-abad-0416bfaac601" />
-  <Project Path="src/Yuu.AspNetCore.Hosting/Yuu.AspNetCore.Hosting.csproj" Id="1681ab93-8cf4-44a5-a35f-cbe79ea71a69" />
-  <Project Path="src/Yuu.AspNetCore.Middleware/Yuu.AspNetCore.Middleware.csproj" Id="c632f06b-7bfb-4521-98d4-1da96efe2a38" />
-  <Project Path="src/Yuu.AspNetCore.Mvc/Yuu.AspNetCore.Mvc.csproj" Id="40de3a54-4dd8-4531-8862-ad0687b87f13" />
-  <Project Path="src/Yuu.ClientInfo.Provider.Abstractions/Yuu.ClientInfo.Provider.Abstractions.csproj" Id="18dc29dc-e23b-4417-9612-f5234cbe1cc7" />
-  <Project Path="src/Yuu.ClientInfo.Provider/Yuu.ClientInfo.Provider.csproj" Id="428e7976-1ddb-481b-a55e-0cbd86ebed33" />
-  <Project Path="src/Yuu.EntityFrameworkCore.Logging/Yuu.EntityFrameworkCore.Logging.csproj" Id="a64e29bf-253e-4615-b39d-5d0307dfbbdf" />
-  <Project Path="src/Yuu.Environment.Provider.Abstractions/Yuu.Environment.Provider.Abstractions.csproj" Id="52ec1f75-cccd-4a48-9846-51acf078c853" />
-  <Project Path="src/Yuu.Environment.Provider/Yuu.Environment.Provider.csproj" Id="1a49e206-acb0-4d16-9bee-9edf356112fe" />
-  <Project Path="src/Yuu.Observability/Yuu.Observability.csproj" Id="ed8de5c0-cd5d-411f-998d-02d0bf75a7c1" />
-  <Project Path="src/Yuu.Redis/Yuu.Redis.csproj" />
-  <Project Path="src/Yuu.Serilog.Elasticsearch/Yuu.Serilog.Elasticsearch.csproj" Id="369edd0c-3edc-46b9-a6c3-5a1dd30ce53e" />
-  <Project Path="src/Yuu.Serilog.GoogleCloudLogging/Yuu.Serilog.GoogleCloudLogging.csproj" Id="8c76fd60-5552-455a-ab5d-27792e5f778c" />
-  <Project Path="src/Yuu.Serilog.Seq/Yuu.Serilog.Seq.csproj" Id="9c1bf978-69ed-47a9-836c-f9f371571a72" />
+  <Folder Name="/src/">
+    <Project Path="src/Yuu.Abp.EntityFrameworkCore/Yuu.Abp.EntityFrameworkCore.csproj" Id="94ef706c-681b-4845-abad-0416bfaac601" />
+    <Project Path="src/Yuu.AspNetCore.Hosting/Yuu.AspNetCore.Hosting.csproj" Id="1681ab93-8cf4-44a5-a35f-cbe79ea71a69" />
+    <Project Path="src/Yuu.AspNetCore.Middleware/Yuu.AspNetCore.Middleware.csproj" Id="c632f06b-7bfb-4521-98d4-1da96efe2a38" />
+    <Project Path="src/Yuu.AspNetCore.Mvc/Yuu.AspNetCore.Mvc.csproj" Id="40de3a54-4dd8-4531-8862-ad0687b87f13" />
+    <Project Path="src/Yuu.ClientInfo.Provider.Abstractions/Yuu.ClientInfo.Provider.Abstractions.csproj" Id="18dc29dc-e23b-4417-9612-f5234cbe1cc7" />
+    <Project Path="src/Yuu.ClientInfo.Provider/Yuu.ClientInfo.Provider.csproj" Id="428e7976-1ddb-481b-a55e-0cbd86ebed33" />
+    <Project Path="src/Yuu.EntityFrameworkCore.Logging/Yuu.EntityFrameworkCore.Logging.csproj" Id="a64e29bf-253e-4615-b39d-5d0307dfbbdf" />
+    <Project Path="src/Yuu.Environment.Provider.Abstractions/Yuu.Environment.Provider.Abstractions.csproj" Id="52ec1f75-cccd-4a48-9846-51acf078c853" />
+    <Project Path="src/Yuu.Environment.Provider/Yuu.Environment.Provider.csproj" Id="1a49e206-acb0-4d16-9bee-9edf356112fe" />
+    <Project Path="src/Yuu.Observability/Yuu.Observability.csproj" Id="ed8de5c0-cd5d-411f-998d-02d0bf75a7c1" />
+    <Project Path="src/Yuu.Redis/Yuu.Redis.csproj" />
+    <Project Path="src/Yuu.Serilog.Elasticsearch/Yuu.Serilog.Elasticsearch.csproj" Id="369edd0c-3edc-46b9-a6c3-5a1dd30ce53e" />
+    <Project Path="src/Yuu.Serilog.GoogleCloudLogging/Yuu.Serilog.GoogleCloudLogging.csproj" Id="8c76fd60-5552-455a-ab5d-27792e5f778c" />
+    <Project Path="src/Yuu.Serilog.Seq/Yuu.Serilog.Seq.csproj" Id="9c1bf978-69ed-47a9-836c-f9f371571a72" />
+  </Folder>
   <Folder Name="/test/">
     <Project Path="test/Yuu.Abp.EntityFrameworkCore.Tests/Yuu.Abp.EntityFrameworkCore.Tests.csproj" />
     <Project Path="test/Yuu.AspNetCore.Hosting.Tests/Yuu.AspNetCore.Hosting.Tests.csproj" />
