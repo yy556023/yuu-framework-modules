@@ -1,0 +1,81 @@
+# 2026-10-31(Yuu):Yuu.* 改由 GitHub Actions 以 GITHUB_TOKEN 發佈到 GitHub Packages,repo 內不存 token。
+# 比照 GitLab nuget-framework 的 tag 觸發 pack → push(CI_JOB_TOKEN 對應 GITHUB_TOKEN)。
+# 觸發:push 與 common.props <Version> 相同的 tag(例 10.3.0);workflow_dispatch 重跑時須在「Use workflow from」選該 tag。
+name: publish-nuget
+
+on:
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: publish-nuget-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  DOTNET_NOLOGO: "true"
+  DOTNET_CLI_TELEMETRY_OPTOUT: "true"
+  PACKAGE_OUTPUT: ${{ github.workspace }}/artifacts/nuget
+  NUGET_PUSH_SOURCE: https://nuget.pkg.github.com/yy556023/index.json
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+
+      - name: 驗證 tag 等於 common.props <Version>
+        shell: bash
+        run: |
+          if [ "${GITHUB_REF_TYPE}" != "tag" ]; then
+            echo "::error::必須以 tag 執行(workflow_dispatch 請在 Use workflow from 選 tag),目前 ref=${GITHUB_REF_NAME}"
+            exit 1
+          fi
+          version="$(sed -n 's:.*<Version>\([^<]*\)</Version>.*:\1:p' common.props | head -n 1)"
+          if [ -z "${version}" ]; then
+            echo "::error::common.props 找不到 <Version>"
+            exit 1
+          fi
+          if [ "${GITHUB_REF_NAME}" != "${version}" ]; then
+            echo "::error::tag ${GITHUB_REF_NAME} 與 common.props <Version> ${version} 不符"
+            exit 1
+          fi
+          echo "版本 ${version}"
+
+      # 只打 IsPackable 的專案;test/ 專案皆 IsPackable=false,不會產生 nupkg。
+      # NuGet.Config 的 github 來源密碼為 %NUGET_AUTH_TOKEN%,restore 時由此環境變數提供。
+      - name: Pack
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: dotnet pack Yuu.Framework.Modules.slnx --configuration Release --output "${PACKAGE_OUTPUT}"
+
+      - name: 確認沒有測試專案被打包
+        shell: bash
+        run: |
+          ls -1 "${PACKAGE_OUTPUT}"
+          if ls "${PACKAGE_OUTPUT}" | grep -q '\.Tests\.'; then
+            echo "::error::測試專案被打包"
+            exit 1
+          fi
+
+      - name: Push
+        shell: bash
+        env:
+          NUGET_API_KEY: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          for pkg in "${PACKAGE_OUTPUT}"/*.nupkg; do
+            echo "=> ${pkg}"
+            dotnet nuget push "${pkg}" \
+              --source "${NUGET_PUSH_SOURCE}" \
+              --api-key "${NUGET_API_KEY}" \
+              --skip-duplicate
+          done
