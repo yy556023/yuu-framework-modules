@@ -24,6 +24,11 @@
     <PackageVersion Include="Volo.Abp.Ddd.Domain" Version="10.6.0" />
     <PackageVersion Include="Volo.Abp.EntityFrameworkCore" Version="10.6.0" />
   </ItemGroup>
+  <!-- Yuu.Redis(2026-10-30):版本對齊消費端(exvs2ib game / match)目前解析到的版本,不改變其相依圖。 -->
+  <ItemGroup Label="Redis">
+    <PackageVersion Include="StackExchange.Redis" Version="2.7.27" />
+    <PackageVersion Include="AspNetCore.HealthChecks.Redis" Version="9.0.0" />
+  </ItemGroup>
   <ItemGroup Label="OpenTelemetry">
     <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.18.0" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.18.0" />

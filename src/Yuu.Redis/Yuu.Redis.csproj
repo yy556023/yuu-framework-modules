@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <!-- Redis 連線註冊與 health check(2026-10-30 自 exvs2ib-server-game / -match 兩個 Host 收斂);不含任何業務 key。 -->
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.Redis" />
+    <PackageReference Include="StackExchange.Redis" />
+    <PackageReference Include="Volo.Abp.Core" />
+  </ItemGroup>
+
+</Project>
