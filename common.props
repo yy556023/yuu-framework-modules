@@ -6,7 +6,7 @@
          代價是沒改的套件也會跟著升版；換來的是「同一批 Yuu.* 必定相容」這個保證。
          ⚠ 消費端的 Directory.Packages.props 必須把所有 Yuu.* 一起升到同一版，
            只升其中幾個會因為 ProjectReference 推導出的相依而觸發 NU1109 降版錯誤。 -->
-    <Version>10.2.0</Version>
+    <Version>10.3.0</Version>
     <Nullable>enable</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
     <NoWarn>IDE0046;IDE0053;</NoWarn>
